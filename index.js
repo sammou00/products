@@ -20,7 +20,7 @@ const _filename = fileURLToPath(import.meta.url);
 const PATH = dirname(_filename);
 
 //serve static files
-app.use(express.static(path.join(PATH, 'dist')));
+app.use(express.static(path.join(PATH, 'dist', 'index.html')));
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 app.post('/payment', async (req, res) => {
