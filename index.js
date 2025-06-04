@@ -28,7 +28,7 @@ app.post('/payment', async (req, res) => {
 
     try {
         const payment = await stripe.paymentIntents.create({
-            amount: amount * 100,
+            amount: parseInt(amount * 100),
             currency: 'usd'
         });
 
